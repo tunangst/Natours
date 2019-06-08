@@ -1,0 +1,92 @@
+.btn{
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 80rem;
+        font-size: $base-font-size;
+        transition: all .2s;
+        position: relative;
+
+        //change button element
+        border: none;
+        cursor: pointer;
+    
+    }
+    &:hover {
+        transform: translateY(-.3px);
+        box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+        &::after {
+            transform: scale(2, 3);
+            opacity: 0;
+        }
+    }
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem .7rem rgba($color-black,.2);
+    }
+    &--white{
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-primary;
+        }
+    }
+
+    &::after {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 80rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    
+        transition: all .2s;
+    }
+   
+    &--animate {
+        animation: slideUp .25s ease-out 2s;
+        animation-fill-mode: backwards;
+    }
+}
+
+.btn-text {
+    &:link,&:visited {
+        font-size: $base-font-size;
+        color: $color-primary-dark;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: .1rem solid $color-primary;
+        padding: .3rem;
+
+        transition: all .2s;
+    }
+    &:hover {
+        background-color: $color-primary-dark;
+        color: $color-white;
+        box-shadow: .25rem .5rem 1rem rgba($color-black, .15);
+        transform: translateY(-.2rem);
+    }
+    &:active {
+        box-shadow: .1rem .2rem 0 rgba($color-black, .15);
+        transform: translateY(0);
+    }
+}
